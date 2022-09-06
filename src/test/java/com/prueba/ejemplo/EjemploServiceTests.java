@@ -19,7 +19,7 @@ public class EjemploServiceTests {
 	EjemploService ejemploService;
 
 	@Test
-	public void getTeamsPoints() {
+	public void getTeams() {
 		List<TeamDTO> teamsReturn = ejemploService.getTeams();
 		assertNotNull(teamsReturn);
 		assertTrue(teamsReturn.size() > 0);
@@ -41,6 +41,15 @@ public class EjemploServiceTests {
 		assertNotNull(teamsReturn);
 		assertTrue(teamsReturn.size() > 0);
 		assertTrue(teamsReturn.get(0).getCountry().equals("Argentina"));
+	}
+
+	@Test
+	public void getTeamsPoints() {
+		List<TeamDTO> teamsReturn = ejemploService.getTeamsPoints();
+		assertNotNull(teamsReturn);
+		assertTrue(teamsReturn.size() > 0);
+		assertTrue(teamsReturn.get(0).getName().equals("Real Madrid"));
+		assertTrue(teamsReturn.get(0).getPoints() == 2031);
 	}
 
 }
